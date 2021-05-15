@@ -1,20 +1,26 @@
 import time
 import os.path,csv
 from datetime import datetime
+
 from SME_DataLogger import *
 
 def main():
 
+    #Acquire Date
+    currentDate = datetime.now().strftime('%Y_%m_%d')
+
     #Variables and name to use
+    folder_name = "Logger"
+    file_name = 'Logger/'+currentDate +'.csv'
     data_name = ["x","y"]
     data1=0
     data2=0
 
     #Initialize SME_DataLogger class, name of data and initial data value
-    data_logger = SME_DataLogger(data_name,[data1,data2])
+    data_logger = SME_DataLogger(folder_name,file_name,data_name,[data1,data2])
 
-    print(data_logger.data_name)
-    print(data_logger.data)
+    #print(data_logger.data_name)
+    #print(data_logger.data)
 
     while data1 < 30:
 
