@@ -3,11 +3,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Create a 1 Hz signal
 freq=1;
-F=2;  %F=freq=2pi
+F=1;  %1/F=freq=2pi
 fs=100; %Samples
 t=0:1/fs:F;
 signal_hz = sin(2*pi*freq*t);
 plot(signal_hz);
+%csvwrite('_signal_1hz.txt',signal_hz);
 
 %Create a 1Hz signal sampling
 %{
